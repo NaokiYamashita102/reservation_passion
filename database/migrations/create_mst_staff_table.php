@@ -18,7 +18,7 @@ class CreateMstStaffTable extends Migration
             $table->string('staff_name');
             $tabel->string('staff_name_kana')->nullable();
             $table->string('staff_tel',11);
-            $table->integer('treatment_flag');
+            $table->integer('treatable_flag')->unsigned();
             $table->text('introduction')->nullable();
             $table->string('staff_line_user_id')->nullable();
 

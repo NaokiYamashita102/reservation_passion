@@ -16,7 +16,7 @@ class CreateMstDiscountsTable extends Migration
         Schema::create('mst_discounts', function (Blueprint $table) {
             $table->id();
             $table->string('discount_name')->comment('割引名');
-            $table->integer('discount_price')->comment('割引額');
+            $table->integer('discount_price')->unsigned()->comment('割引額');
             $table->timestamps();
         });
     }

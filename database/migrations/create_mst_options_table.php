@@ -16,7 +16,7 @@ class CreateMstOptionsTable extends Migration
         Schema::create('mst_options', function (Blueprint $table) {
             $table->id();
             $table->string('option_name')->comment('オプション名');
-            $table->integer('option_fee')->comment('オプション料金');
+            $table->integer('option_fee')->unsigned()->comment('オプション料金');
             $table->text('option_detail')-nullable()->comment('紹介文');
             $table->timestamps();
         });

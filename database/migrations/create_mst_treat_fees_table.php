@@ -15,7 +15,7 @@ class CreateMstTreatFeesTable extends Migration
     {
         Schema::create('mst_treat_fees', function (Blueprint $table) {
             $table->id();
-            $table->integer('treatment_fee')->comment('治療料金');
+            $table->integer('treatment_fee')->unsigned()->comment('治療料金');
             $table->timestamps();
         });
     }

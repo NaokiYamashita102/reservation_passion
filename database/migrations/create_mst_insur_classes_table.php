@@ -16,7 +16,7 @@ class CreateMstInsurClassesTable extends Migration
         Schema::create('mst_insur_classes', function (Blueprint $table) {
           //マスタ保険区分テーブル
             $table->id();
-            $table->integer('insur_class_id')->comment('保険区分ID');
+            // $table->integer('insur_class_id')->comment('保険区分ID');
             $table->string('insur_class_name')->comment('保険区分名');
             $table->timestamps();
         });

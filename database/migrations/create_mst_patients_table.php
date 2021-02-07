@@ -15,7 +15,7 @@ class CreateMstPatientsTable extends Migration
     {
         Schema::create('mst_patients', function (Blueprint $table) {
             $table->id();
-            $table->string('patient_id')->comment('患者No.');
+            $table->string('karte_id')->comment('カルテ上のNo.');
             $table->string('patient_name')->comment('患者名');
             $tabel->string('patient_name_kana')->nullable()->comment('患者名カナ');
             $table->string('tel_1',11)->nullable()->comment('携帯電話番号');
@@ -24,9 +24,12 @@ class CreateMstPatientsTable extends Migration
             $table->string('line_user_id')->nullable()->comment('ラインID');
             $table->date('birthday')->nullable()->comment('誕生日');
             $table->string('sex')->comment('性別');
-            $table->integer('insur_class_id')->comment('保険区分ID');
-            $table->integer('insur_fee_id')->comment('保険料金ID');
-            $table->integer('fee_structure_id')->comment('料金体系ID');
+            $table->integer('insur_class_id')->unsigned()->comment('保険区分ID');
+            $table->foreign('insur_class_id')->references('id')->on('mst_insur_classes');
+            $table->integer('insur_fee_id')->unsigned()->comment('保険料金ID');
+            $table->foreign('insur_fee_id')->references('id')->on('mst_insur_fees');
+            $table->integer('fee_structure_id')->unsigned()->comment('料金体系ID');
+            $table->foreign('fee_structure_id')->references('id')->on('mst_fee_structures');
             $table->text('remarks')->nullable()->comment('備考');
 
             $table->timestamps();

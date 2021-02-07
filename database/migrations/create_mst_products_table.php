@@ -16,7 +16,7 @@ class CreateMstProductsTable extends Migration
         Schema::create('mst_products', function (Blueprint $table) {
             $table->id();
             $table->string('product_name')->comment('商品名');
-            $table->integer('product_price')->comment('商品価格');
+            $table->integer('product_price')->unsigned()->comment('商品価格');
             $table->timestamps();
         });
     }

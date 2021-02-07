@@ -15,7 +15,7 @@ class CreateMstInsurFeesTable extends Migration
     {
         Schema::create('mst_insur_fees', function (Blueprint $table) {
             $table->id();
-            $table->integer('insur_fee')->comment('保険料金');
+            $table->integer('insur_fee')->unsigned()->comment('保険料金');
             $table->timestamps();
         });
     }
