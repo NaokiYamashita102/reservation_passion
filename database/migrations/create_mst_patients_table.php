@@ -24,12 +24,12 @@ class CreateMstPatientsTable extends Migration
             $table->string('line_user_id')->nullable()->comment('ラインID');
             $table->date('birthday')->nullable()->comment('誕生日');
             $table->string('sex')->comment('性別');
-            $table->integer('insur_class_id')->unsigned()->comment('保険区分ID');
-            $table->foreign('insur_class_id')->references('id')->on('mst_insur_classes');
-            $table->integer('insur_fee_id')->unsigned()->comment('保険料金ID');
-            $table->foreign('insur_fee_id')->references('id')->on('mst_insur_fees');
-            $table->integer('fee_structure_id')->unsigned()->comment('料金体系ID');
-            $table->foreign('fee_structure_id')->references('id')->on('mst_fee_structures');
+            $table->bigInteger('insur_class_id')->unsigned()->comment('保険区分ID');
+            $table->foreignId('insur_class_id')->references('id')->on('mst_insur_classes');
+            $table->bigInteger('insur_fee_id')->unsigned()->comment('保険料金ID');
+            $table->foreignId('insur_fee_id')->references('id')->on('mst_insur_fees');
+            $table->bigInteger('fee_structure_id')->unsigned()->comment('料金体系ID');
+            $table->foreignId('fee_structure_id')->references('id')->on('mst_fee_structures');
             $table->text('remarks')->nullable()->comment('備考');
 
             $table->timestamps();
