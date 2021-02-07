@@ -15,9 +15,9 @@ class CreateMstStaffTable extends Migration
     {
         Schema::create('mst_staff', function (Blueprint $table) {
             $table->increments('id');
-            
+
             $table->string('staff_name');
-            $tabel->string('staff_name_kana')->nullable();
+            $table->string('staff_name_kana')->nullable();
 
             $table->string('staff_tel',11);
             $table->string('staff_line_user_id')->nullable();
