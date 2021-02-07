@@ -16,7 +16,7 @@ class CreatePatientsTagsTabel extends Migration
         Schema::create('patients_tags_tabel', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('patient_id')->unsigned()->comment('患者ID');
-            $table->bigInteger('get_meta_tags_id')->unsigned()->comment('タグID');
+            $table->bigInteger('tag_id')->unsigned()->comment('タグID');
             $table->timestamps();
         });
     }
