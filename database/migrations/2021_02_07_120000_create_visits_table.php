@@ -25,7 +25,7 @@ class CreateVisitsTable extends Migration
             $table->bigInteger('mst_staff_id')->unsigned()->comment('スタッフID');
             $table->foreign('mst_staff_id')
                     ->references('id')
-                    ->on('mst_staff');
+                    ->on('mst_staffs');
 
             $table->unsignedBigInteger('visit_class_id')->comment('初再診');
             $table->foreign('visit_class_id')
