@@ -32,20 +32,17 @@ class CreateMstPatientsTable extends Migration
             $table->unsignedBigInteger('insur_class_id')->comment('保険区分ID');
             $table->foreign('insur_class_id')
                     ->references('id')
-                    ->on('mst_insur_classes')
-                    ->comment('保険区分ID');
+                    ->on('mst_insur_classes');
 
             $table->unsignedBigInteger('insur_fee_id')->comment('保険料金ID');
             $table->foreign('insur_fee_id')
                     ->references('id')
-                    ->on('mst_insur_fees')
-                    ->comment('保険料金ID');
+                    ->on('mst_insur_fees');
 
             $table->unsignedBigInteger('fee_structure_id')->comment('料金体系ID');
             $table->foreign('fee_structure_id')
                     ->references('id')
-                    ->on('mst_fee_structures')
-                    ->comment('料金体系ID');
+                    ->on('mst_fee_structures');
 
             $table->text('remarks')->nullable()->comment('備考');
 
