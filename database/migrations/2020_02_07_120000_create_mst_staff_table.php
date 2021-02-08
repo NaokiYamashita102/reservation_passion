@@ -13,8 +13,8 @@ class CreateMstStaffTable extends Migration
      */
     public function up()
     {
-        Schema::create('mst_staff', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('mst_staffs', function (Blueprint $table) {
+            $table->id();
 
             $table->string('staff_name');
             $table->string('staff_name_kana')->nullable();
@@ -36,6 +36,6 @@ class CreateMstStaffTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mst_staff');
+        Schema::dropIfExists('mst_staffs');
     }
 }

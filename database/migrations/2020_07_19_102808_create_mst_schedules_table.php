@@ -15,10 +15,10 @@ class CreateMstSchedulesTable extends Migration
     {
         Schema::create('mst_schedules', function (Blueprint $table) {
             $table->id();
-            $table->integer('mst_time_id')->unsigned();
+            $table->bigInteger('mst_time_id')->unsigned();
             $table->foreign('mst_time_id')->references('id')->on('mst_times');
-            $table->integer('mst_staff_id')->unsigned();
-            $table->foreign('mst_staff_id')->references('id')->on('mst_staff');
+            $table->bigInteger('mst_staff_id')->unsigned();
+            $table->foreign('mst_staff_id')->references('id')->on('mst_staffs');
         });
     }
 

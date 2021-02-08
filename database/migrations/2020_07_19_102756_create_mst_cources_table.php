@@ -14,14 +14,14 @@ class CreateMstCourcesTable extends Migration
     public function up()
     {
         Schema::create('mst_cources', function (Blueprint $table) {
-            $table->increments('id');
+            $table->id();
             $table->string('picture')->nullable();
             $table->string('name');
             $table->text('detail')->nullable();
             $table->string('color');
             $table->string('number_frames');
             $table->integer('price');
-            
+
         });
     }
 
