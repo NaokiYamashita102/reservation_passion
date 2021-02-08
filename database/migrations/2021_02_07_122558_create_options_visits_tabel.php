@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisitsDiscountsTabel extends Migration
+class CreateOptionsVisitsTabel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateVisitsDiscountsTabel extends Migration
      */
     public function up()
     {
-        Schema::create('visits_discounts_tabel', function (Blueprint $table) {
+        Schema::create('options_visits_tabel', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('visit_id')->unsigned()->comment('来院ID');
-            $table->bigInteger('discount_id')->unsigned()->comment('割引ID');
+            $table->bigInteger('option_id')->unsigned()->comment('オプションID');
             $table->bigInteger('pay_status_id')->unsigned()->comment('支払ID');
             $table->timestamps();
         });
@@ -29,6 +29,6 @@ class CreateVisitsDiscountsTabel extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visits_discounts_tabel');
+        Schema::dropIfExists('options_visits_tabel');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVisitsTreatmentsTabel extends Migration
+class CreateTreatmentsVisitsTabel extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateVisitsTreatmentsTabel extends Migration
      */
     public function up()
     {
-        Schema::create('visits_treatments_tabel', function (Blueprint $table) {
+        Schema::create('treatments_visits_tabel', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('visit_id')->unsigned()->comment('来院ID');
             $table->bigInteger('treatment_id')->unsigned()->comment('治療ID');
@@ -29,6 +29,6 @@ class CreateVisitsTreatmentsTabel extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('visits_treatments_tabel');
+        Schema::dropIfExists('treatments_visits_tabel');
     }
 }
