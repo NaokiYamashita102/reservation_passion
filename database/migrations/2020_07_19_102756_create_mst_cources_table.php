@@ -20,7 +20,7 @@ class CreateMstCourcesTable extends Migration
             $table->text('detail')->nullable();
             $table->string('color');
             $table->string('number_frames');
-            $table->integer('price');
+            // $table->integer('price');
 
         });
     }

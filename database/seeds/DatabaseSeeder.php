@@ -44,17 +44,14 @@ class DatabaseSeeder extends Seeder
         //             'end_time' => $i+1 .':00',
         //   ]);
         // }
-        for ($i = 1; $i <= 10; $i++) {
-          for ($j = 1; $j <= 26; $j++) {
-            DB::table('mst_schedules')->insert([
-                      'mst_staff_id' => $i,
-                      'mst_time_id' => $j,
-            ]);
-          }
-        }
-        // DB::table('mst_statuses')->insert([
-        //     'name' => '予約可能',
-        //     'busy_flg' => 0,
-        // ]);
+        // for ($i = 1; $i <= 10; $i++) {
+        //   for ($j = 1; $j <= 26; $j++) {
+        //     DB::table('mst_schedules')->insert([
+        //               'mst_staff_id' => $i,
+        //               'mst_time_id' => $j,
+        //     ]);
+        //   }
+        // }
+
     }
 }
